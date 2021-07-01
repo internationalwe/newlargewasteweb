@@ -1,0 +1,129 @@
+.a {
+	width: 100%;
+}
+
+.b {
+	width: 40%;
+	margin: 0 auto;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+/* id는 하나 밖에 올 수 없음 */
+h1 {
+	font-size: xx-large;
+	text-align: center;
+	margin: 0;
+}
+header {
+	color: rgb(24, 179, 140);
+	font-weight: 400;
+	font-size: 27px;
+	line-height: 32px;
+	letter-spacing: -1px;
+	text-align: center;
+	margin: 0;
+	padding-top: 20pt;
+	padding-bottom: 10pt;
+}
+h2 {
+	font-size: 15px;
+	margin-bottom: 0.5rem;
+	font-weight: 300;
+	line-height: 1.3;
+	color: #333;
+	text-align: center;
+}
+h3 {
+	text-align: center;
+}
+
+div {
+	border: 0px solid gray;
+	border-top: 0px;
+}
+@media (max-width: 800px) {
+	#grid {
+		border: 0px solid gray;
+		display: block;
+	}
+	ol {
+		border-right: 0px solid gray;
+		width: 100px;
+		margin: 0;
+		padding: 20px;
+	}
+	h1 {
+		border-bottom: 0px;
+	}
+}
+body {
+	margin: 0; /*body의 바깥 여백을 없앰으로서 내비게이션 바가 페이지에 바짝 붙게 함*/
+}
+
+.nav-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0; /*쓸 데 없는 공백 제거*/
+	padding: 0; /*쓸 데 없는 공백 제거*/
+	background-color: darkslategrey;
+	list-style-type: none; /*목록 기호 제거*/
+}
+
+.nav-item {
+	padding: 15px;
+	cursor: pointer; /*마우스 커서를 pointer 모양으로 함*/
+}
+.nav-item a {
+	/*nav-item 클래스 아래의 a 요소를 선택함*/
+	text-align: center;
+	text-decoration: none; /*밑줄 없앰*/
+	color: white;
+}
+.nav-item:nth-child(1) {
+	background-color: lightseagreen;
+}
+
+.nav-item:hover {
+	background-color: grey;
+}
+.nav-container {
+	position: fixed;
+	top: 0; /*상단 위치를 0으로 함으로서 위에 붙음*/
+}
+
+header {
+	margin-top: 80px; /*페이지의 맨 위에서 메뉴가 header를 가리지 않도록 공백을 만듬*/
+}
+
+.img-1 {
+	display: block;
+	margin: 0px auto;
+}
+#predict-button {
+	display: block;
+	margin: 0px auto;
+}
+img {
+	display: inline-block;
+	content: '';
+}
+
+button {
+	/* display: inline-block;
+	padding: 0.75em 2.5em 0.75em 2.5em;
+	border-radius: 0.35em;
+	letter-spacing: 0.2em;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #fff;
+	background-color: #8ebebc; */
+	background-color: #fff;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}

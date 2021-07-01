@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>서랍장 재사용 판단 시스템</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="color.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0"></script>
+		<style>
+			.img-container {
+				text-align: center;
+			}
+		</style>
+    </head>
+
+    <nav>
+        <ul class="nav-container">
+            <a href="index.html"><img src="img\KakaoTalk_20210630_213321666.png" alt="이미지" height="51ox"/></a>
+            <li class="nav-item"> <a href="1.html">의자</a> </li>
+            <li class="nav-item"> <a href="2.html">책상</a> </li>
+            <li class="nav-item"> <a href="3.html">서랍장</a> </li>
+            <li class="nav-item"> <a href="4.html">침대</a> </li>
+        </ul>
+    </nav>
+
+    <body>
+        <header>대형가구 재사용 판단 시스템</header>
+        <h2>폐기 할 서랍장의 재사용성을 판단해보세요 </h2>
+        
+        <p>
+            <div class="row">
+                <input
+                    type="file"
+                    accept="image / *"
+                    name="image"
+                    id="image-selector"
+                    class="form-control border-0"
+                    style="display: none"
+                />
+            </div>
+            <h3>
+                <label for="image-selector" style="cursor: pointer">
+                    이미지 업로드
+                </label>
+            </h3>
+            <p>
+                <img
+                    id="selected-image"
+                    class="img-1"
+                    src=""
+                    crossorigin="anonymous"
+                    width="400"
+                    height="400"
+                />
+            </p>
+            <p><img id="output" width="200" /></p>
+            <div class="col-6">
+                <button
+                    id="predict-button"
+                    class="btn btn-dark float-right"
+                >
+                <img src="img\KakaoTalk_20210701_142647766.png" width = "75">
+                </button>
+            </p>
+        <script>
+            // var loadFile = function (event) {
+            // 	var image = document.getElementById('output');
+            // 	image.src = URL.createObjectURL(event.target.files[0]);
+            // };
+            $('#image-selector').change(function () {
+                let reader = new FileReader();
+                reader.onload = function () {
+                    let dataURL = reader.result;
+                    $('#selected-image').attr('src', dataURL);
+                    $('#prediction-list').empty();
+                };
+                let file = $('#image-selector').prop('files')[0];
+                reader.readAsDataURL(file);
+            });
+
+            $('#predict-button').click(async function () {
+                let image = $('#selected-image').get(0);
+                // const gantImage =
+                // 	document.getElementById('selected-image');
+                console.log('image', image);
+                let tensor = tf.browser
+                    .fromPixels(image)
+                    .resizeNearestNeighbor([150, 150])
+                    .toFloat();
+                console.log('tensor', tensor);
+                let resize_image = tf.reshape(
+                    tensor,
+                    [1, 150, 150, 3],
+                    'resize'
+                );
+                resize_image = resize_image.div(tf.scalar(255));
+
+                console.log('resizeimage', resize_image);
+                tf.loadLayersModel(
+                    'drawer_model/model.json'
+                ).then(function (model) {
+                    const temp = model.predict(resize_image);
+                    const predict = temp.dataSync()[0];
+                    console.log(predict);
+                    if (predict >= 0.5) {
+                        console.log('재사용가능합니다.');
+                        let predict_percent = parseInt(predict * 100);
+                        window.alert("재사용 가능성 : " + predict_percent + "%" +'\n' + '재사용가능합니다.');
+                    } else {
+                        console.log('폐기 대상입니다.');
+                        let predict_percent = parseInt(predict * 100);
+                        window.alert("재사용 가능성 : "+predict_percent + "%" + '\n' +'폐기 대상입니다.');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
