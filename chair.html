@@ -17,10 +17,11 @@
     <nav>
         <ul class="nav-container">
             <a href="index.html"><img src="img\KakaoTalk_20210630_213321666.png" alt="이미지" height="52ox"/></a>
-            <li class="nav-item"> <a href="1.html">의자</a> </li>
-            <li class="nav-item"> <a href="2.html">책상</a> </li>
-            <li class="nav-item"> <a href="3.html">서랍장</a> </li>
-            <li class="nav-item"> <a href="4.html">침대</a> </li>
+            <li class="nav-item"> <a href="chair.html">의자</a> </li>
+            <li class="nav-item"> <a href="desk.html">책상</a> </li>
+            <li class="nav-item"> <a href="drawer.html">서랍장</a> </li>
+            <li class="nav-item"> <a href="bed.html">침대</a> </li>
+            <li class="nav-item"> <a href="recyclingmap.html">재활용 지도</a> </li>
         </ul>
     </nav>
 
@@ -63,7 +64,7 @@
                 <img src="img\KakaoTalk_20210701_142647766.png" width="75" >
                 </button>
             </p>
-        <script>
+        <script type="text/javascript">
             // var loadFile = function (event) {
             // 	var image = document.getElementById('output');
             // 	image.src = URL.createObjectURL(event.target.files[0]);
@@ -106,7 +107,13 @@
                     if (predict >= 0.5) {
                         console.log('재사용가능합니다.');
                         let predict_percent = parseInt(predict * 100);
-                        window.alert("재사용 가능성 : " + predict_percent + "%" +'\n' + '재사용가능합니다.');
+                        var returnvalue = confirm("재사용 가능성 : " + predict_percent + "%" +'\n' + '폐기하지 말고 재사용하세요요.')
+                        // window.alert("재사용 가능성 : " + predict_percent + "%" +'\n' + '재사용가능합니다.');
+                        if (returnvalue == true){
+                            document.location.href="recyclingmap.html"
+                        }
+                        
+
                     } else {
                         console.log('폐기 대상입니다.');
                         let predict_percent = parseInt(predict * 100);
