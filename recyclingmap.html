@@ -3,8 +3,12 @@
     <title>지역별 재활용센터</title>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a62f33c0b7ebab0a8dc5e81387d5048e"></script>
+    
     <style>
         .img-container {
             text-align: center;
@@ -16,7 +20,7 @@
         }
     </style>
 </head>
-<script>
+<script type="text/javascript">
     var Seocho_positions = [
         {
             content: '<div class="marker" >과천선바위재활용센터<br>주소 : 서울 서초구 잠원로14길 29<br>전화번호 : 070-4986-1250</div>', 
@@ -853,7 +857,7 @@
     </div>
     <div id="map" style="width:100%;height:80vh;"></div>
 
-    <script>
+    <script type="text/javascript">
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
         mapOption = { 
             center: new kakao.maps.LatLng(37.5178693164268, 127.0153725435554), // 지도의 중심좌표
