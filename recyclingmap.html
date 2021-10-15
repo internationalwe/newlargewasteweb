@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
     <title>지역별 재활용센터</title>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0"></script>
@@ -10,18 +11,6 @@
         .img-container {
             text-align: center;
         }
-        select {
-            width: 200px;
-            padding: .8em .5em;
-            border: 1px solid #999;
-            font-family: inherit;
-            background: url('img/arrow.jpg') no-repeat 95% 50%;
-            border-radius: 0px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            margin:0
-        }
         .marker{
             width:380px;
             height:80px;
@@ -29,55 +18,8 @@
         }
     </style>
 </head>
-
-<nav>
-    <ul class="nav-container">
-        <a href="index.html"><img src="img\KakaoTalk_20210630_213321666.png" alt="이미지" height="52ox"/></a>
-        <li class="nav-item"> <a href="chair.html">의자</a> </li>
-        <li class="nav-item"> <a href="desk.html">책상</a> </li>
-        <li class="nav-item"> <a href="drawer.html">서랍장</a> </li>
-        <li class="nav-item"> <a href="bed.html">침대</a> </li>
-        <li class="nav-item"> <a href="sa.html">재활용센터 지도</a> </li>
-    </ul>
-</nav>
-<body>
-    <header>대형가구 재활용센터</header>
-    <h2>재사용 가능한 물품은 재활용센터를 통해서 재활용해보세요</h2>
-    <!-- <label for="gu-select">배출 하시는 구를 선택하세요</label> -->
-    <h3>
-        <select name="seoul-gu" id="gu-select" onchange="handleOnChange(this)">
-            <option value="">구를 선택하세요</option>
-            <option value="Jongno">종로구</option>
-            <option value="Jung">중구</option>
-            <option value="Yongsan">용산구</option>
-            <option value="Seongdong">성동구</option>
-            <option value="Gwangjin">광진구</option>
-            <option value="Dongdaemun">동대문구</option>
-            <option value="Jungnang">중랑구</option>
-            <option value="Seongbuk">성북구</option>
-            <option value="Gangbuk">강북구</option>
-            <option value="Dobong">도봉구</option>
-            <option value="Nowon">노원구</option>
-            <option value="Eunpyeong">은평구</option>
-            <option value="Seodaemun">서대문구</option>
-            <option value="Mapo">마포구</option>
-            <option value="Yangcheon">양천구</option>
-            <option value="Gangseo">강서구</option>
-            <option value="Guro">구로구</option>
-            <option value="Geumcheon">금천구</option>
-            <option value="Yeongdeungpo">영등포구</option>
-            <option value="Dongjak">동작구</option>
-            <option value="Gwanak">관악구</option>
-            <option value="Seocho">서초구</option>
-            <option value="Gangnam">강남구</option>
-            <option value="Songpa">송파구</option>
-            <option value="Gangdong">강동구</option>
-        </select>
-    </h3>
-    <div id="map" style="width:100%;height:80vh;"></div>
-
-    <script>
-     var Seocho_positions = [
+<script>
+    var Seocho_positions = [
         {
             content: '<div class="marker" >과천선바위재활용센터<br>주소 : 서울 서초구 잠원로14길 29<br>전화번호 : 070-4986-1250</div>', 
             latlng: new kakao.maps.LatLng(37.517840013472075, 127.01552807278331)
@@ -634,14 +576,7 @@
             latlng: new kakao.maps.LatLng(37.50395425805878, 126.85963993283795)
         }
     ];
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-        mapOption = { 
-            center: new kakao.maps.LatLng(37.5178693164268, 127.0153725435554), // 지도의 중심좌표
-            level: 7 // 지도의 확대 레벨
-        };
 
-    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-    
     function handleOnChange(e){
         // var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
         
@@ -872,7 +807,62 @@
         };
     }
     })
+</script>
+<nav>
+    <ul class="nav-container">
+        <a href="index.html"><img src="img\KakaoTalk_20210630_213321666.png" alt="이미지" height="52ox"/></a>
+        <li class="nav-item"> <a href="chair.html">의자</a> </li>
+        <li class="nav-item"> <a href="desk.html">책상</a> </li>
+        <li class="nav-item"> <a href="drawer.html">서랍장</a> </li>
+        <li class="nav-item"> <a href="bed.html">침대</a> </li>
+        <li class="nav-item"> <a href="sa.html">재활용센터 지도</a> </li>
+        <li class="nav-item"> <a href="wasteCenterList.jsp">대형가구 폐기 방법</a> </li>
+    </ul>
+</nav>
+<body>
+    <header>대형가구 재활용센터</header>
+    <h2>재사용 가능한 물품은 재활용센터를 통해서 재활용해보세요</h2>
+    <!-- <label for="gu-select">배출 하시는 구를 선택하세요</label> -->
+    <div class= "gu_list">
+        <select name="seoul-gu" id="gu-select" onchange="handleOnChange(this)">
+            <option value="">구를 선택하세요</option>
+            <option value="Jongno">종로구</option>
+            <option value="Jung">중구</option>
+            <option value="Yongsan">용산구</option>
+            <option value="Seongdong">성동구</option>
+            <option value="Gwangjin">광진구</option>
+            <option value="Dongdaemun">동대문구</option>
+            <option value="Jungnang">중랑구</option>
+            <option value="Seongbuk">성북구</option>
+            <option value="Gangbuk">강북구</option>
+            <option value="Dobong">도봉구</option>
+            <option value="Nowon">노원구</option>
+            <option value="Eunpyeong">은평구</option>
+            <option value="Seodaemun">서대문구</option>
+            <option value="Mapo">마포구</option>
+            <option value="Yangcheon">양천구</option>
+            <option value="Gangseo">강서구</option>
+            <option value="Guro">구로구</option>
+            <option value="Geumcheon">금천구</option>
+            <option value="Yeongdeungpo">영등포구</option>
+            <option value="Dongjak">동작구</option>
+            <option value="Gwanak">관악구</option>
+            <option value="Seocho">서초구</option>
+            <option value="Gangnam">강남구</option>
+            <option value="Songpa">송파구</option>
+            <option value="Gangdong">강동구</option>
+        </select>
+    </div>
+    <div id="map" style="width:100%;height:80vh;"></div>
 
+    <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.5178693164268, 127.0153725435554), // 지도의 중심좌표
+            level: 7 // 지도의 확대 레벨
+        };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
     </script>
 </body>
 </html>

@@ -39,6 +39,9 @@ h2 {
 h3 {
 	text-align: center;
 }
+.gu_list {
+	text-align: center;
+}
 
 div {
 	border: 0px solid gray;
@@ -127,4 +130,16 @@ button {
 	border: 0;
 	outline: 0;
 	cursor: pointer;
+}
+select {
+	width: 200px;
+	padding: 0.8em 0.5em;
+	border: 1px solid #999;
+	font-family: inherit;
+	background: url('img/arrow.jpg') no-repeat 95% 50%;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
 }
