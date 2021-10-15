@@ -47,7 +47,7 @@ div {
 	border: 0px solid gray;
 	border-top: 0px;
 }
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
 	#grid {
 		border: 0px solid gray;
 		display: block;
@@ -61,7 +61,7 @@ div {
 	h1 {
 		border-bottom: 0px;
 	}
-}
+} */
 body {
 	margin: 0;
 	padding: 0; /*body의 바깥 여백을 없앰으로서 내비게이션 바가 페이지에 바짝 붙게 함*/
