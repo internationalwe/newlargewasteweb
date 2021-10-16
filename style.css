@@ -143,3 +143,6 @@ select {
 	appearance: none;
 	margin: 0;
 }
+#intro_image {
+	text-align: center;
+}
