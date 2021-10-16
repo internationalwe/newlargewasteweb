@@ -40,7 +40,7 @@
 			}
 		</style>
 		<script>
-			var Secho_list = [
+			var Seocho_list = [
 				{
 					place: '방배본ㆍ1ㆍ4동, 잠원동, 반포2ㆍ3동, 반포4동(반포대로 서편 - 서래마을 방면)',
 					name: '하동기업',
@@ -67,11 +67,478 @@
 					phone_number: '02) 3474-9384~5',
 				},
 			];
+			var Geumcheon_list = [
+				{
+					place: '가산동',
+					name: '가산동 주민센터',
+					phone_number: '02-2627-2501',
+				},
+				{
+					place: '독산1동',
+					name: '독산1동 주민센터',
+					phone_number: '02-2627-2503',
+				},
+				{
+					place: '독산2동',
+					name: '독산2동 주민센터',
+					phone_number: '02-2627-2505',
+				},
+				{
+					place: '독산3동',
+					name: '독산3동 주민센터',
+					phone_number: '02-2627-2507',
+				},
+				{
+					place: '독산4동',
+					name: '독산5동 주민센터',
+					phone_number: '02-2627-2509',
+				},
+				{
+					place: '시흥1동',
+					name: '시흥1동 주민센터',
+					phone_number: '02-2627-2513',
+				},
+				{
+					place: '시흥2동',
+					name: '시흥2동 주민센터',
+					phone_number: '02-2627-2515',
+				},
+				{
+					place: '시흥3동',
+					name: '시흥3동 주민센터',
+					phone_number: '02-2627-2517',
+				},
+				{
+					place: '시흥4동',
+					name: '시흥4동 주민센터',
+					phone_number: '02-2627-2519',
+				},
+				{
+					place: '시흥5동',
+					name: '시흥5동 주민센터',
+					phone_number: '02-2627-2521',
+				},
+			];
+			
+			var Yeongdeungpo_list = [
+				{
+					place: '양평1동, 양평2동',
+					name: '동일환경',
+					phone_number: '02-2633-8359',
+				},
+				{
+					place: '영등포동',
+					name: '동진환경',
+					phone_number: '02-2678-3005',
+				},
+				{
+					place: '대림1동, 대림2동, 대림3동',
+					name: '우성환경',
+					phone_number: '02-783-8928',
+				},
+				{
+					place: '영등포본동, 도림동, 신길1동, 신길4동',
+					name: '남서울환경',
+					phone_number: '02-843-9218',
+				},
+				{
+					place: '신길3동, 신길5동, 신길6동, 신길7동',
+					name: '삼원환경',
+					phone_number: '02-2678-6590',
+				},
+				{
+					place: '당산1동',
+					name: '당산1동 주민센터터',
+					phone_number: '02-2670-1111',
+				},
+				{
+					place: '당산2동',
+					name: '당산2동 주민센터',
+					phone_number: '02-2670-1132',
+				},
+				{
+					place: '여의동',
+					name: '여의동 주민센터',
+					phone_number: '02-2670-1451',
+				},
+				{
+					place: '문래동',
+					name: '문래동 주민센터',
+					phone_number: '02-2670-1182',
+				},
+			];
+			var Dongjak_list = [
+				{
+					place: '노량진1~2동',
+					name: '경청클린',
+					phone_number: '02-812-5143',
+				},
+				{
+					place: '상도1~4동',
+					name: '기성환경',
+					phone_number: '02-812-7565',
+				},
+				{
+					place: '흑석동, 사당2동',
+					name: '남지환경',
+					phone_number: '02-826-6776',
+				},
+				{
+					place: '사당1동, 사당3동, 사당4동, 사당5동',
+					name: '늘푸른환경',
+					phone_number: '02-525-4145',
+				},
+				{
+					place: '대방동, 신대방1동, 신대방2동',
+					name: '신세계환경',
+					phone_number: '02-835-9933',
+				}
+			];
+			var Gangnam_list = [
+				{
+					place: '신사동, 논현1동, 논현2동, 압구정동',
+					name: '하진기업',
+					phone_number: '02-3442-6507',
+				},
+				{
+					place: '대치1동, 대치4동, 역삼2동',
+					name: '하남기업',
+					phone_number: '02-546-1911',
+				},
+				{
+					place: '일원본동, 일원1동, 수서동, 세곡동',
+					name: '평원기업',
+					phone_number: '02-579-3930',
+				},
+				{
+					place: '역삼1동, 도곡1동',
+					name: '성진미화',
+					phone_number: '02-563-8297,8',
+				},
+				{
+					place: '삼성2동, 대치2동',
+					name: '고려환경',
+					phone_number: '02-3411-1086',
+				},
+				{
+					place: '도곡2동, 개포1·2·4동, 일원2동',
+					name: '평아용역',
+					phone_number: '02-568-6705',
+				},
+				{
+					place: '로얄환경',
+					name: '청담동, 삼성1동',
+					phone_number: '02-567-2240',
+				},
+			];
+			var Songpa_list = [
+				{
+					place: '잠실본동, 삼전동, 가락시장1구역, 잠실3동',
+					name: '본에코',
+					phone_number: '02-414-6221',
+				},
+				{
+					place: '방이1동, 방이2동, 송파1동, 잠실4동, 잠실6동, 올림픽공원',
+					name: '평아기업',
+					phone_number: '02-415-3234',
+				},
+				{
+					place: '거여1동, 마천1동, 마천2동, 오륜동, 오금동',
+					name: '방산산업',
+					phone_number: '02-404-3274',
+				},
+				{
+					place: '가락본동, 가락2동, 문정1동',
+					name: '미도정업',
+					phone_number: '02-448-1316',
+				},
+				{
+					place: '풍납1동, 풍납2동, 거여2동, 장지동 일부',
+					name: '원창산업',
+					phone_number: '02-418-8334',
+				},
+				{
+					place: '석촌동, 가락1동, 가락시장2구역, 문정2동 일부',
+					name: '서울녹색산업',
+					phone_number: '02-418-8333',
+				},
+				{
+					place: '잠실2동, 잠실3동 일부, 종합운동장, 잠실1·2롯데, 가락시장 3구역',
+					name: '크린써비스',
+					phone_number: '02-443-2292',
+				},
+				{
+					place: '장지파인타운, 동남권유통단지(가든5,한화,푸르지오,아이파크,하비오오피스텔,하비오아파트 등)',
+					name: '오투환경',
+					phone_number: '02-409-7778',
+				},
+				{
+					place: '송파2동, 잠실7동, 위례동',
+					name: '초록숲',
+					phone_number: '02-403-3003',
+				},
+			];
+			var Gangdong_list = [
+				{
+					place: '강동구 전체',
+					name: '리싸이클시티',
+					phone_number: '02-1811-7304~6',
+				},	
+			];
+			var Jung_list = [
+            {
+				place: '명동1가,2가, 저동1가, 충무로1가,2가, 남산동1가2가3가, 회현2가일부, 회현3가(법정동일부)',
+				name: '거구실업',
+				phone_number: '02-319-7406',
+            },
+            {
+				place: '약수동, 신당5동, 동화동, 황학동',
+				name: '동보환경',
+				phone_number: '02-2234-1072',
+            },
+            {
+				place: '무교, 다동, 태평로1가, 을지로1가~5가, 남대문1가, 삼각동, 수하, 장교, 수표, 주교, 방산, 입정, 초동, 산림, 인현1가, 저동2가',
+				name: '무한기업',
+				phone_number: '02-2264-6162',
+            },
+            {
+				place: '청구, 신당, 흥인 무학, 광희1가·2가, 쌍림, 을지로6가',
+				name: '민영주택',
+				phone_number: '02-2233-5411',
+            },
+            {
+				place: '충무로3가,4가,5가, 인현2가, 예관, 묵정, 오장, 필동1가,2가,3가, 남학, 주자, 장충1가,2가, 다산동, 예장동',
+				name: '수도환경',
+				phone_number: '02-2275-9608',
+            },
+            {
+				place: '남대문2가,3가,4가,5가, 소공, 북창, 태평로2가, 서소문, 정동, 순화, 충정로1가, 의주로1가,2가, 봉래1가,2가, 회현1가,2가,3가, 남창, 만리1가,2가, 중림동',
+				name: '하경기업',
+				phone_number: '02-365-0097',
+            },
+		];
+		var Seongdong_list = [
+            {
+				place: '성수1가2동(방송통신대 주변), 성수2가1동, 성수2가3동, 옥수동(옥수리버젠, 옥수파크힐스)',
+				name: '㈜고려도시개발',
+				phone_number: '02-463-4300',
+            },
+            {
+				place: '마장동, 응봉동, 금호3~4가동, 용답동, 옥수동',
+				name: '㈜성동환경',
+				phone_number: '02-2294-6300',
+            },
+            {
+				place: '도선동, 사근동, 행당1동, 성수1가1동, 용답동',
+				name: '㈜나라환경산업',
+				phone_number: '02-2214-0075',
+            },
+            {
+				place: '왕십리동, 행당2동, 금호1~2가동, 성수1가2동(에스콰이어 주변), 송정동',
+				name: '㈜신흥환경',
+				phone_number: '02-2231-4426',
+            },
+		];
+		var Dongdaemun_list = [
+            {
+				place: '용신동, 전농1동, 제기동, 청량리동, 회기동',
+				name: '제일환경',
+				phone_number: '02-963-3795',
+            },
+            {
+				place: '답십리1·2동, 장안1·2동',
+				name: '용마산업',
+				phone_number: '02-968-1966',
+            },
+            {
+				place: '휘경1·2동, 전농2동, 이문1·2동',
+				name: '동양용역',
+				phone_number: '02-2242-0807',
+            },
+		];
+		var Jungnang_list = [
+            {
+				place: '묵1동, 묵2동, 신내1동, 신내2동, 중화1동, 중화2동',
+				name: '용마용역',
+				phone_number: '1644-8923',
+            },
+            {
+				place: '면목3.8, 면목본동, 망우3동, 망우본동',
+				name: '우리환경',
+				phone_number: '02-435-4424~5',
+            },
+            {
+				place: '면목2동, 면목4동, 면목5동, 면목7동, 상봉1동, 상봉2동',
+				name: '중랑환경',
+				phone_number: '02-491-1714~5',
+            },
+		];
+		var Seodaemun_list = [
+            {
+				place: '충현동, 천연동, 북아현동, 신촌동, 연희동',
+				name: '서대문구 재활용센터',
+				phone_number: '02-391-7171',
+            },
+            {
+				place: '홍제1·2·3동, 홍은1·2동',
+				name: '서부환경',
+				phone_number: '02-374-2221',
+            },
+            {
+				place: '남가좌1·2동, 북가좌1·2동',
+				name: '웰빙환경',
+				phone_number: '02-375-3122',
+            },
+		];
+		var Yangcheon_list = [
+            {
+				place: '신월 1동, 신월2동, 신월3동, 신월5동',
+				name: '동남용역(주)',
+				phone_number: '02)2644-8488',
+            },
+            {
+				place: '목2동, 목3동, 목4동, 신정4동 일부(872~942번지, 1305, 1308번지)',
+				name: '청송환경(주)',
+				phone_number: '02)2644-2744',
+            },
+            {
+				place: '신월4동, 신월6동, 신월7동, 신정3동, 신정1동 일부(1031, 1032번지)',
+				name: '(주)양천환경',
+				phone_number: '02)2693-6348',
+            },
+			{
+				place: '목5동',
+				name: '신목실업(주)',
+				phone_number: '02)2646-3954',
+            },
+			{
+				place: '목1동, 신정2동,신정4동 일부(943~1013번지)',
+				name: '한성용역(주)',
+				phone_number: '02)2693-3844',
+            },
+			{
+				place: '신정6동, 신정7동, 신정1동 일부(1031, 1032번지 제외)',
+				name: '(주)신원지엘',
+				phone_number: '02)2646-8618',
+            },
+		];
 			function handleOnChange(e){
-				const tableList = [];
-				var gu_list = Secho_list;
-				tableInsert(gu_list)
+				switch (e.value) {
+					case "Jongno":
+						window.open("https://www.jongno.go.kr/bigclean/");
+						break;
+					case "Jung":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Yongsan":
+						window.open("https://www.jongno.go.kr/bigclean/");
+						break;
+					case "Seongdong":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Gwangjin":
+						window.open("https://www.gwangjin.go.kr:8585/bigclean/bcInfo/bcInfo.jsp");
+						break;
+					case "Dongdaemun":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Jungnang":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Seongbuk":
+						window.open("https://www.thebarunsb.com/");
+						break;
+					case "Gangbuk":
+						window.open("https://www.gangbuk.go.kr/www/contents.do?key=727");
+						tableInsert(gu_list)
+						break;
+					case "Dobong":
+						window.open("https://www.dobong.go.kr/subsite/waste/Contents.asp?code=10007383");
+						break;
+					case "Nowon":
+						window.open("http://nowon.storyweb.co.kr/inquiry_form.html");
+						break;
+					case "Eunpyeong":
+						window.open("https://ai-waste.ep.go.kr/");
+						break;
+					case "Seodaemun":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Mapo":
+						window.open("https://www.mapo.go.kr/CmsWeb/bigclean/bcOrder/bcOrder.jsp");
+						break;
+					case "Yangcheon":
+						var guname = e.value
+						var returnvalue = confirm("대형폐기물 신청방법에 전화신청 및 인터넷 신청이 있습니다.\n인터넷 신청이면 확인을 전화 신청이면 취소를 눌러주세요.")
+						if (returnvalue == true)
+						{
+							window.open("https://www.yangcheon.go.kr/site/yangcheon/foffice/ex/bigWaste/BigWasteUserFForm_NoLogin.do")
+						}
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						
+						break;
+					case "Gangseo":
+						window.open("http://www.gangseo.seoul.kr/new_portal/new_cybermin/sub3/sub3_2_2.jsp")
+						break;
+					case "Guro":
+						window.open("https://www.guro.go.kr/www/addInfoExhaustAgree.do?key=2659&")
+						break;
+					case "Geumcheon":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Yeongdeungpo":
+						var guname = e.value
+						window.open("https://www.ydp.go.kr/reserve/wsteExhstReqstWebForm.do?key=5495&");
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Dongjak":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Gwanak":
+						window.open("http://www.gwanak.go.kr/site/gwanak/07/10703010500002016051206.jsp");
+						break;
+					case "Seocho":
+						var guname = e.value
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Gangnam":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Songpa":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					case "Gangdong":
+						var guname = e.value
+						var gu_list = eval(guname+"_list");
+						tableInsert(gu_list)
+						break;
+					default:
+						break;
+				}
 			};
+			
 		</script>
 		<!-- 내부 JS 지정 -->
 		<script type="text/javascript">
@@ -121,14 +588,16 @@
 			<li class="nav-item">
 				<a href="recyclingmap.html">재활용센터 지도</a>
 			</li>
-			<li class="nav-item"> <a href="wasteCenterList.html">대형가구 폐기 방법</a> </li>
+			<li class="nav-item"> <a href="wasteCenterList.html">대형폐기물 폐기 방법</a> </li>
 		</ul>
 	</nav>
 	<body>
 		
 		</h3>
-		<header>대형가구 재사용 판단 시스템</header>
-		<h2>폐기 할 침대의 재사용성을 판단해보세요</h2>
+		<header>대형폐기물 폐기 방법</header>
+		<h2>배출 할 지역을 선택하세요.</h2>
+		<h2>전화신청 : 지역별 대행업체 확인하시고 전화하신 후 품목, 금액, 수거 일정 문의하신 후 수수료 납부하시면 됩니다.</h2>
+		<h2>인터넷신청 : 연결되는 사이트에서 신청하시면 됩니다.</h2>
 		<div class="gu_list">
 			<select
 				name="seoul-gu"
